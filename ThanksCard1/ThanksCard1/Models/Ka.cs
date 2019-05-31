@@ -12,4 +12,5 @@ namespace ThanksCard1.Models
         public string KaName { get; set; }
         public virtual Busyo Busyo { get; set; } 
 }
+
 }
