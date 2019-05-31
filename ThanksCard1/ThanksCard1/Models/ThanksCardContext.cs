@@ -19,5 +19,6 @@ namespace ThanksCard1.Models
         public DbSet<Ka> Kas { get; set; }
         public DbSet<Work> Works { get; set; }
 
+
     }
 }
