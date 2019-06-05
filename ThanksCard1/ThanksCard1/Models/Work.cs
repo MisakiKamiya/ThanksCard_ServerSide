@@ -10,5 +10,6 @@ namespace ThanksCard1.Models
         public int Id { get; set; }
         public int CD{ get; set; }
         public int WorkRelation { get; set; }
+
 }
 }

@@ -11,46 +11,46 @@ namespace ThanksCard1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class KaController : ControllerBase
+    public class BusyoesController : ControllerBase
     {
         private readonly ThanksCardContext _context;
 
-        public KaController(ThanksCardContext context)
+        public BusyoesController(ThanksCardContext context)
         {
             _context = context;
         }
 
-        // GET: api/Ka
+        // GET: api/Busyoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Ka>>> GetKas()
+        public async Task<ActionResult<IEnumerable<Busyo>>> GetBusyoes()
         {
-            return await _context.Kas.ToListAsync();
+            return await _context.Busyoes.ToListAsync();
         }
 
-        // GET: api/Ka/5
+        // GET: api/Busyoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Ka>> GetKa(int id)
+        public async Task<ActionResult<Busyo>> GetBusyo(int id)
         {
-            var ka = await _context.Kas.FindAsync(id);
+            var busyo = await _context.Busyoes.FindAsync(id);
 
-            if (ka == null)
+            if (busyo == null)
             {
                 return NotFound();
             }
 
-            return ka;
+            return busyo;
         }
 
-        // PUT: api/Ka/5
+        // PUT: api/Busyoes/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutKa(int id, Ka ka)
+        public async Task<IActionResult> PutBusyo(int id, Busyo busyo)
         {
-            if (id != ka.Id)
+            if (id != busyo.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(ka).State = EntityState.Modified;
+            _context.Entry(busyo).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace ThanksCard1.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!KaExists(id))
+                if (!BusyoExists(id))
                 {
                     return NotFound();
                 }
@@ -71,39 +71,35 @@ namespace ThanksCard1.Controllers
             return NoContent();
         }
 
-        // POST: api/Ka
+        // POST: api/Busyoes
         [HttpPost]
-        public async Task<ActionResult<Ka>> PostKa(Ka ka)
+        public async Task<ActionResult<Busyo>> PostBusyo(Busyo busyo)
         {
-            // Parent Department には既に存在している部署が入るため、更新の対象から外す。
-            
-
-            _context.Kas.Add(ka);
+            _context.Busyoes.Add(busyo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetKa", new { id = ka.Id }, ka);
+            return CreatedAtAction("GetBusyo", new { id = busyo.Id }, busyo);
         }
 
-        // DELETE: api/Ka/5
+        // DELETE: api/Busyoes/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Ka>> DeleteKa(int id)
+        public async Task<ActionResult<Busyo>> DeleteBusyo(int id)
         {
-            var ka = await _context.Kas.FindAsync(id);
-            if (ka == null)
+            var busyo = await _context.Busyoes.FindAsync(id);
+            if (busyo == null)
             {
                 return NotFound();
             }
 
-            _context.Kas.Remove(ka);
+            _context.Busyoes.Remove(busyo);
             await _context.SaveChangesAsync();
 
-            return ka;
+            return busyo;
         }
 
-        private bool KaExists(int id)
+        private bool BusyoExists(int id)
         {
-            return _context.Kas.Any(e => e.Id == id);
+            return _context.Busyoes.Any(e => e.Id == id);
         }
     }
 }
-

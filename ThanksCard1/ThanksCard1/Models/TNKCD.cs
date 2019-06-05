@@ -17,5 +17,6 @@ namespace ThanksCard1.Models
         public string Body { get; set; }
         public virtual Work Work { get; set; }
         public bool Look { get; set; }
+
     }
 }

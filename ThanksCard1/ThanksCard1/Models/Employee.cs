@@ -15,5 +15,6 @@ namespace ThanksCard1.Models
         public string Mail { get; set; }
         public virtual Ka Ka { get; set; }
     
+
     }
 }

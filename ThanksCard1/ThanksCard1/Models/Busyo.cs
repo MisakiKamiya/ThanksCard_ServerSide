@@ -12,5 +12,6 @@ namespace ThanksCard1.Models
         public string BusyoName { get; set; }
         public bool Power{ get; set; }
 
+
    }
 }
