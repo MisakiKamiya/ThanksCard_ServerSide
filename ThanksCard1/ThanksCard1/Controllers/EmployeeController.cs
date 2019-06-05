@@ -25,7 +25,7 @@ namespace ThanksCard1.Controllers
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
             return await _context.Employees
-                                            .Include(Employee => Employee.Ka.Busyo) 
+                                            .Include(Employee => Employee.Ka) 
                                             .ToListAsync();
         }
 

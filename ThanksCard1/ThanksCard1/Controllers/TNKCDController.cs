@@ -27,7 +27,6 @@ namespace ThanksCard1.Controllers
             return await _context.TNKCDs
                                     .Include(ThanksCard => ThanksCard.EmployeeFrom)
                                     .Include(ThanksCard => ThanksCard.EmployeeTo)
-                                    .Include(ThanksCard => ThanksCard.Work)
                                     .ToListAsync();
         }
         #endregion

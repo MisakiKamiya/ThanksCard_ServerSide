@@ -24,9 +24,7 @@ namespace ThanksCard1.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Ka>>> GetKas()
         {
-            return await _context.Kas
-                                    .Include(Ka => Ka.Busyo)
-                                    .ToListAsync();
+            return await _context.Kas.ToListAsync();
         }
 
         // GET: api/Ka/5
