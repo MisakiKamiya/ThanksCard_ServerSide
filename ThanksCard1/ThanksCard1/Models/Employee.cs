@@ -13,6 +13,8 @@ namespace ThanksCard1.Models
         public string NameKana { get; set; }
         public string Password { get; set; }
         public string Mail { get; set; }
+
+        public int? KaId { get; set; }
         public virtual Ka Ka { get; set; }
     
 

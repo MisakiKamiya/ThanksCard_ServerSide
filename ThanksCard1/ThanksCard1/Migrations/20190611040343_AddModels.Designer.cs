@@ -10,8 +10,8 @@ using ThanksCard1.Models;
 namespace ThanksCard1.Migrations
 {
     [DbContext(typeof(ThanksCardContext))]
-    [Migration("20190528053351_AddModels4")]
-    partial class AddModels4
+    [Migration("20190611040343_AddModels")]
+    partial class AddModels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

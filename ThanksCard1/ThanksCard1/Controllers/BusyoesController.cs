@@ -25,6 +25,7 @@ namespace ThanksCard1.Controllers
         public async Task<ActionResult<IEnumerable<Busyo>>> GetBusyoes()
         {
             return await _context.Busyoes.ToListAsync();
+                                         
         }
 
         // GET: api/Busyoes/5
