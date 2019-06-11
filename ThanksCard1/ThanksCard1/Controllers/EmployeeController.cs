@@ -25,7 +25,8 @@ namespace ThanksCard1.Controllers
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
             return await _context.Employees
-                                            .Include(Employee => Employee.Ka) 
+                                            .Include(Employee => Employee.Ka)
+                                            .Include(Employee => Employee.Ka.Busyo)
                                             .ToListAsync();
         }
 
@@ -78,7 +79,7 @@ namespace ThanksCard1.Controllers
         [HttpPost]
         public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
         {
-            _context.Kas.Attach(employee.Ka);
+            //_context.Kas.Attach(employee.Ka);
 
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();

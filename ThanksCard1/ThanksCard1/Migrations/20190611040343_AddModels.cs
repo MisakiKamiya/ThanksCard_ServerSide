@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ThanksCard1.Migrations
 {
-    public partial class AddModels4 : Migration
+    public partial class AddModels : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -166,4 +166,3 @@ namespace ThanksCard1.Migrations
         }
     }
 }
-

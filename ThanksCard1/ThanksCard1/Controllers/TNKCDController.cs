@@ -85,7 +85,8 @@ namespace ThanksCard1.Controllers
             _context.TNKCDs.Add(tNKCD);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTNKCD", new { id = tNKCD.Id }, tNKCD);
+            //return CreatedAtAction("GetTNKCD", new { id = tNKCD.Id }, tNKCD);
+            return tNKCD;
         }
 
         // DELETE: api/TNKCD/5
